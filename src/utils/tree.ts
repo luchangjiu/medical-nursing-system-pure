@@ -186,3 +186,58 @@ export const handleTree = (
   }
   return tree;
 };
+
+/**
+ * @description 构造tree select 树型结构数据
+ * @param data
+ * @param id
+ * @param label
+ * @param parentId
+ * @param children
+ * @returns
+ */
+export function handleTreeSelect(
+  data: any[],
+  id?: string,
+  parentId?: string,
+  label?: string
+) {
+  if (!Array.isArray(data)) {
+    console.warn("data must be an array");
+    return [];
+  }
+  const config = {
+    id: id || "id",
+    parentId: parentId || "parentId",
+    label: label || "label"
+  };
+  const tree = [];
+  const parents = data.filter(
+    x => x[config.parentId] == null || x[config.parentId] == ""
+  );
+  for (const d of parents) {
+    const treeItem = {
+      label: d[config.label],
+      value: d[config.id],
+      children: undefined
+    };
+    fillTreeChildren(treeItem);
+    tree.push(treeItem);
+  }
+
+  function fillTreeChildren(o: Record<string, any>) {
+    const childrenList = [];
+    const children = data.filter(x => x[config.parentId] == o.value);
+    for (const c of children) {
+      const treeItem = {
+        label: c[config.label],
+        value: c[config.id],
+        children: undefined
+      };
+      fillTreeChildren(treeItem);
+      childrenList.push(treeItem);
+    }
+    o.children = childrenList;
+  }
+  return tree;
+}

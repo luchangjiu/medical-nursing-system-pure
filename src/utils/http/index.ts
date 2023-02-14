@@ -189,6 +189,21 @@ class PureHttp {
   ): Promise<P> {
     return this.request<P>("get", url, params, config);
   }
+
+  public delete<T, P>(
+    url: string,
+    params?: AxiosRequestConfig<T>,
+    config?: PureHttpRequestConfig
+  ): Promise<P> {
+    return this.request<P>("delete", url, params, config);
+  }
 }
 
 export const http = new PureHttp();
+
+export type Result<T = any> = {
+  code: number;
+  success: boolean;
+  message: string;
+  data: T;
+};

@@ -1,6 +1,6 @@
 {
-  "name": "pure-admin-thin",
-  "version": "3.9.7",
+  "name": "medical-nursing-system-pure",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS=--max-old-space-size=4096 vite",
@@ -74,7 +74,7 @@
     "autoprefixer": "^10.4.13",
     "cloc": "^2.10.0",
     "cssnano": "^5.1.14",
-    "eslint": "^8.8.0",
+    "eslint": "^8.29.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^9.7.0",
     "husky": "^7.0.4",
@@ -84,7 +84,7 @@
     "postcss-html": "^1.5.0",
     "postcss-import": "^15.0.0",
     "postcss-scss": "^4.0.5",
-    "prettier": "^2.5.1",
+    "prettier": "^2.8.1",
     "pretty-quick": "3.1.1",
     "rimraf": "3.0.2",
     "rollup-plugin-visualizer": "^5.8.3",
@@ -118,7 +118,7 @@
       ]
     }
   },
-  "repository": "git@github.com:xiaoxian521/pure-admin-thin.git",
-  "author": "xiaoxian521",
+  "repository": "git@github.com:luchangjiu/medical-nursing-system-pure.git",
+  "author": "luchangjiu",
   "license": "MIT"
 }

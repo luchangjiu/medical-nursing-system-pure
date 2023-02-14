@@ -24,8 +24,11 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "eslint.enable": true,
+  "eslint.format.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "iconify.excludes": ["el"]
+  "iconify.excludes": ["el"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
